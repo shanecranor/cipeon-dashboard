@@ -9,11 +9,8 @@ export const VersionBanner = () => {
 
 function weeksPast(start: number) {
   const currentDate = Date.now();
-
   const millisecondsPerWeek = 1000 * 60 * 60 * 24 * 7;
-
   const elapsedMilliseconds = currentDate - start;
   const weeks = Math.floor(elapsedMilliseconds / millisecondsPerWeek);
-
   return weeks;
 }

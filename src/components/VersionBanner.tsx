@@ -6,6 +6,7 @@ export const VersionBanner = () => {
     </div>
   );
 };
+
 function weeksPast(start: number) {
   const currentDate = Date.now();
 
@@ -16,7 +17,3 @@ function weeksPast(start: number) {
 
   return weeks;
 }
-
-// Example usage:
-const startDate = "2024-01-01";
-console.log(weeksPast(startDate)); // Outputs the number of weeks since January 1, 2024

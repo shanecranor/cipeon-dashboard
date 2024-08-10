@@ -3,7 +3,7 @@ export const VersionBanner = () => {
     <div className="p-version-banner">
       <p>Hack Night</p>
       <p>v0.{weeksPast(1723256301120 - 4320000) + 8}</p>
-      <p>from ♾ to beyond</p>
+      <p className="rainbow">from ♾ to beyond</p>
     </div>
   );
 };

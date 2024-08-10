@@ -1,2 +1,19 @@
 .p-home {
+  width: 100dvw;
+  height: 100dvh;
+  .big-banner {
+    // background: red;
+    height: 90dvh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    font-size: 150px;
+    font-family: monospace;
+  }
+  footer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
 }

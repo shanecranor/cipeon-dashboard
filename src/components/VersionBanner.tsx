@@ -1,8 +1,8 @@
 export const VersionBanner = () => {
   return (
     <div className="p-version-banner">
-      <p>hack night</p>
-      <p>Version: 0.{weeksPast(1723256301120 - 4320000) + 8}</p>
+      <p>Hack Night</p>
+      <p>v0.{weeksPast(1723256301120 - 4320000) + 8}</p>
     </div>
   );
 };

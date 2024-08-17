@@ -4,11 +4,14 @@
   position: fixed;
   top: 0;
   z-index: -100;
+  filter: hue-rotate(60deg);
 }
 .p-home {
   width: 100dvw;
   height: 100dvh;
+
   background: rgba(0, 0, 0, 0.8);
+
   // background-image: url("./use-svg-as-background-image-particle-strokes.svg");
   background-size: cover;
   .big-banner {

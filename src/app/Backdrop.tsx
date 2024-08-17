@@ -13,18 +13,21 @@ export function Backdrop({
   res: number;
   time: number;
 }) {
+  const tempTime = time / 10000;
   const draw = useCallback(
     (g) => {
       g.clear();
       for (let x = 0; x < width; x += res) {
         for (let y = 0; y < height; y += res) {
-          g.beginFill(Math.abs(x * y * Math.tan(x + time)) % 0xffffff);
+          g.beginFill(
+            Math.abs((x % 100) * y * Math.tan(x * 0.1 + tempTime)) % 0xffffff
+          );
           g.drawRect(x, y, res, res);
           g.endFill();
         }
       }
     },
-    [width, height, res, time]
+    [width, height, res, tempTime]
   );
 
   return <Graphics draw={draw} />;

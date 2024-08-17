@@ -4,8 +4,8 @@ import { Stage, Container, Sprite, Text } from "@pixi/react";
 import { useState, useEffect, useRef } from "react";
 export default function Pixi() {
   const [dim, setDim] = useState({
-    width: window.innerWidth,
-    height: window.innerHeight,
+    width: 1000,
+    height: 1000,
   });
   const [unixTimestamp, setUnixTimestamp] = useState(
     Math.floor(Date.now() / 1000)
@@ -18,6 +18,7 @@ export default function Pixi() {
     requestRef.current = requestAnimationFrame(updateTimestamp);
   };
   useEffect(() => {
+    setDim({ width: window.innerWidth, height: window.innerHeight });
     requestRef.current = requestAnimationFrame(updateTimestamp);
 
     return () => cancelAnimationFrame(requestRef.current);

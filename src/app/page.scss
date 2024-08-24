@@ -5,6 +5,9 @@
   top: 0;
   z-index: -100;
   filter: hue-rotate(260deg);
+  // 260 - hack green
+  // 100 - hackoween red
+  // 60 - default pink
 }
 .p-home {
   width: 100dvw;
@@ -13,9 +16,9 @@
   background: rgba(0, 0, 0, 0.8);
 
   // background-image: url("./use-svg-as-background-image-particle-strokes.svg");
+  // opacity: 0.8;
   background-size: cover;
   .big-banner {
-    // background: red;
     height: 90dvh;
     display: flex;
     justify-content: center;

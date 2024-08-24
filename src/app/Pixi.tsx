@@ -33,7 +33,7 @@ export default function Pixi() {
       <Backdrop
         width={dim.width}
         height={dim.height}
-        res={20}
+        res={10}
         time={unixTimestamp}
       />
     </Stage>

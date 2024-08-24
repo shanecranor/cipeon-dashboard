@@ -39,34 +39,27 @@
 
 // pulse effect
 .pulsing {
-  animation: pulsing 3s ease-out;
-  animation-iteration-count: infinite; 
+  animation: pulsing 3s ease-in-out;
+  animation-iteration-count: infinite;
   opacity: 1;
-  color: gold
+  color: gold;
 }
 @keyframes pulsing {
-  0% { 
+  0% {
     transform: scale(0.95);
     color: darken(gold, 20);
   }
-  10%{
-    transform: scale(1);
-  }
-  50% { 
+  50% {
     transform: scale(1.2);
     color: lighten(gold, 10);
   }
-  90%{
-    transform: scale(1);
-  }
-  100% { 
+  100% {
     transform: scale(0.95);
     color: darken(gold, 20);
   }
 }
 
-
-// ranibow !!! 
+// ranibow !!!
 .rainbow {
   animation: rainbow 2.5s linear;
   animation-iteration-count: infinite;

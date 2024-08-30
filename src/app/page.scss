@@ -4,9 +4,9 @@
   position: fixed;
   top: 0;
   z-index: -100;
-  filter: hue-rotate(260deg);
+  filter: hue-rotate(40deg);
   // 260 - hack green
-  // 100 - hackoween red
+  // 140 - hackoween red
   // 60 - default pink
 }
 .p-home {
@@ -36,8 +36,10 @@
 }
 
 .tagline {
-  color: rgba(255, 217, 0, 0.658);
-  text-shadow: gold 0px 0px 20px;
+  // color: rgba(255, 217, 0, 0.658);
+  // text-shadow: skyblue 0px 0px 20px;
+  color: rgba(212, 0, 255, 0.658);
+  text-shadow: skyblue 0px 0px 20px;
 }
 
 // pulse effect
@@ -45,20 +47,20 @@
   animation: pulsing 3s ease-in-out;
   animation-iteration-count: infinite;
   opacity: 1;
-  color: gold;
+  color: skyblue;
 }
 @keyframes pulsing {
   0% {
     transform: scale(0.95);
-    color: darken(gold, 20);
+    color: darken(skyblue, 20);
   }
   50% {
     transform: scale(1.2);
-    color: lighten(gold, 10);
+    color: lighten(skyblue, 10);
   }
   100% {
     transform: scale(0.95);
-    color: darken(gold, 20);
+    color: darken(skyblue, 20);
   }
 }
 

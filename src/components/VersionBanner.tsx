@@ -2,8 +2,7 @@ export const VersionBanner = () => {
   return (
     <div className="p-version-banner">
       <p>Hack Night</p>
-      {/* <p>v0.{weeksPast(1723247838261) + 8}</p> */}
-      <p className="pulsing">v1.1</p> 
+      <p className="pulsing">v1.{weeksPast(new Date('2024-8-26').getTime()) + 1}</p>
       <p className="tagline">action reaction</p>
     </div>
   );

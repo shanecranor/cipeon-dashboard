@@ -1,5 +1,5 @@
 const lastMajorVersion = new Date('2024-8-22') // 1.0 - Friday
-const indexDate = new Date(); 
+const indexDate = lastMajorVersion;
 indexDate.setDate(lastMajorVersion.getDate() - 1);
 
 export const VersionBanner = () => {

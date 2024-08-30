@@ -3,9 +3,8 @@ export const VersionBanner = () => {
     <div className="p-version-banner">
       <p>Hack Night</p>
       {/* <p>v0.{weeksPast(1723247838261) + 8}</p> */}
-      <p className="pulsing">v1.0</p> 
-      {/* fuck it we hardcode */}
-      <p className="tagline">what the sigma?</p>
+      <p className="pulsing">v1.1</p> 
+      <p className="tagline">action reaction</p>
     </div>
   );
 };

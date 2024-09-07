@@ -1,4 +1,4 @@
-const lastMajorVersion = new Date('2024-8-22') // 1.0 - Friday
+const lastMajorVersion = new Date("2024-8-22"); // 1.0 - Friday
 const indexDate = lastMajorVersion;
 indexDate.setDate(lastMajorVersion.getDate() - 1);
 
@@ -7,7 +7,7 @@ export const VersionBanner = () => {
     <div className="p-version-banner">
       <p>Hack Night</p>
       <p className="pulsing">v1.{weeksPast(indexDate)}</p>
-      <p className="tagline">action reaction</p>
+      <p className="tagline">midnight_mystery</p>
     </div>
   );
 };

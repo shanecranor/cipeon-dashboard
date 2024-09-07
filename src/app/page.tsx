@@ -1,12 +1,12 @@
 import { VersionBanner } from "@/components/VersionBanner";
 import "./page.scss";
 import { Clock } from "@/components/Clock";
-import Pixi from "./Pixi";
+import Backdrop from "./ThreeJSBackdrop";
 
 export default function Home() {
   return (
     <div className="p-home">
-      <Pixi />
+      <Backdrop />
       <div className="big-banner">
         <VersionBanner />
       </div>

@@ -8,7 +8,7 @@ export const VersionBanner = () => {
     <div className="p-version-banner">
       <p>Hack Night</p>
       <p className="pulsing">v1.{weeksPast(indexDate)}</p>
-      <p className="tagline">midnight_mystery</p>
+      <p className="tagline">it begin</p>
       <br></br>
       <p className="info"> build instant: {Date.now()} </p>
     </div>

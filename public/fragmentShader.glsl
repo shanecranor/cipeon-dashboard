@@ -1,7 +1,19 @@
 uniform vec3 iResolution; // resolution of the screen
 uniform float iTime;      // time variable
 float pixelSize = 0.5;  // size of the pixels for pixelation effect
+// Convert float to uint, perform bit shift, and convert back
+float bsfl(float f, int shift) {
+    uint intRep = floatBitsToUint(f);   // Convert float to uint
+    uint shifted = intRep << shift;     // Perform left shift
+    return uintBitsToFloat(shifted);    // Convert back to float
+}
 
+// Convert float to uint, perform bit shift, and convert back
+float bsfr(float f, int shift) {
+    uint intRep = floatBitsToUint(f);   // Convert float to uint
+    uint shifted = intRep >> shift;     // Perform right shift
+    return uintBitsToFloat(shifted);    // Convert back to float
+}
 float distanceToPoint(vec2 p1, vec2 p2) {
     return sqrt(pow(p1.x - p2.x, 2.0) + pow(p1.y - p2.y, 2.0));
 }
@@ -39,11 +51,9 @@ void mainImage( out vec4 fragColor, in vec2 fragCoord )
     // float colorHex = floor(
     //     mod(abs((mod(x / 10.0, 100.0) * y * tan(x * 10.0 + tempTime) * 10.0 )+ 400000.0)  , 16777215.0)
     // );
+    float radial =(distanceToPoint(vec2(x, y), vec2(x/10.0, y/10.0))*10.0 + tempTime*5000.0) * 11.0;
     float colorHex = floor(
-        mod(0.3*abs(
-          (distanceToPoint(vec2(x*x*x/100.0+tempTime*10.0, (y*y*100.0-tempTime*20000.0)+cos(x/100.0+tempTime*10.0)*10000000.0), vec2(10000.0+sin(x)*1000000.0,0.0))*1.0 - tempTime*5000.0) 
-          //(mod(x / 10.0, 100.0) * y * tan(x * 10.0 + tempTime) * 10.0 ) + 400000.0
-          ), 16777215.0)
+        mod(0.3*abs(bsfl(-1234.0+y/77.0+sin(x/100.0)+tempTime/100.0*0.5,23)+bsfl(-1000.0+x+sin(y/100.0+tempTime/100.0)+tempTime,20)) + radial, 16777215.0)
     );
 
     // Extract RGB components using bitwise operations
@@ -52,9 +62,9 @@ void mainImage( out vec4 fragColor, in vec2 fragCoord )
     float b = floor(mod(colorHex, 256.0)) / 255.0;
 
     // Combine into a color vector
-    // vec3 color = vec3(r*30.0+g/2.0, g/2.0, b*b*b*100.0);
-    vec3 color = yuv2rgb(vec3(r, g, b));
-
+    vec3 color = vec3(r*30.0+g/2.0, g/2.0, b*b*b*100.0);
+    // vec3 color = yuv2rgb(vec3(r, g, b));
+    // vec3 color = vec3(r, g, b);
     // Set the final fragment color
     fragColor = vec4(color, 1.0);
 }

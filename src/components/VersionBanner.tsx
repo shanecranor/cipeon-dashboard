@@ -2,17 +2,18 @@
 const lastMajorVersion = new Date("2024-8-22"); // 1.0 - Friday
 const indexDate = lastMajorVersion;
 indexDate.setDate(lastMajorVersion.getDate() - 1);
+let tagline = ':(){ :|:& };:'
 
 export const VersionBanner = () => {
   return (
     <div className="p-version-banner" suppressHydrationWarning>
       <p>Hack Night</p>
       <p className="pulsing">v1.{weeksPast(indexDate)}</p>
-      <p className="tagline">it begin</p>
+      <p className="tagline">{tagline}</p>
       <br></br>
-      <p className="info" suppressHydrationWarning>
+      {/* <p className="info" suppressHydrationWarning>
         build instant: {Date.now()}{" "}
-      </p>
+      </p> */}
     </div>
   );
 };

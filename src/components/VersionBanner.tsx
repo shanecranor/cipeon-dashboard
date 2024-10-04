@@ -8,13 +8,14 @@ const defaultTagline = ":(){ :|:& };";
 
 export const VersionBanner = () => {
   // State to manage the editable tagline
-  const [tagline, setTagline] = useState<string>(
-    localStorage.getItem("tagline") || defaultTagline
-  );
+  const [tagline, setTagline] = useState<string>(defaultTagline);
   const [isEditing, setIsEditing] = useState<boolean>(false);
   const [inputValue, setInputValue] = useState<string>(tagline);
 
   // Update the tagline when localStorage is modified
+  useEffect(() => {
+    setTagline(localStorage.getItem("tagline") || defaultTagline);
+  }, []);
   useEffect(() => {
     localStorage.setItem("tagline", tagline);
   }, [tagline]);
